@@ -20,19 +20,43 @@ public class Pilha {
 	}
 	
 	public void inserirElemento(String valor) {
-		for(int i=0;i<vetor.length;i++) {
-			if(vetor[i] == null) {
-				vetor[i] = valor;
-				break;
+		if(estaCheio()) {
+			System.out.println("Pilha cheia");
+		}else {
+			for(int i=0;i<tamanho;i++) {
+				if(vetor[i] == null) {
+					vetor[i] = valor;
+					qtdElementos++;
+					break;
+				}
+			}	
+		}
+		
+	}
+	
+	public void removerElemento() {
+		if(estaVazio()) {
+			System.out.println("Lista Vazia");
+		}else{
+			for (int i = tamanho-1; i > 0 ; i--) {
+				if(vetor[i] != null) {
+					vetor[i] = null;
+					qtdElementos--;
+					break;
+				}
 			}
 		}
 	}
 	
 	public void listarPilha() {
-		for(int i=0;i<vetor.length;i++) {
-			if(vetor[i] != null) {
-				System.out.println("- "+vetor[i]);
-			}
+		if(estaVazio()) {
+			System.out.println("Lista Vazia");
+		}else {
+			for(int i=0;i<tamanho;i++) {
+				if(vetor[i] != null) {
+					System.out.println("- "+vetor[i]);
+				}
+			}	
 		}
 	}
 	
