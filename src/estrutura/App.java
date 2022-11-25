@@ -1,5 +1,6 @@
 package estrutura;
 
+import estrutura.model.Fila;
 import estrutura.model.Pilha;
 
 public class App {
@@ -49,6 +50,48 @@ public class App {
 		
 		pilha.listarPilha();
 		
+		Fila fila = new Fila(5);
+		
+		System.out.println("___________Antes_________");
+		System.out.println("###########Fila############");
+		
+		System.out.printf("Quantidade de Elementos: %d\n", fila.getQtdElementos());		
+		System.out.printf("Está vazia: %b\n",fila.estaVazio());
+		System.out.printf("Está cheio: %b\n", fila.estaCheio());
+		System.out.printf("Tamanho: %d\n", fila.getTamanho());
+
+		System.out.println("-----------Lista-----------");
+		
+		fila.listarFila();
+
+		System.out.println("###########Inseção##########");
+
+		fila.inserirElemento("Marcos");
+		fila.inserirElemento("Talita");
+		fila.inserirElemento("Jennifer");
+		fila.inserirElemento("Thiago");
+		fila.inserirElemento("Carlos");
+		
+		fila.listarFila();
+
+		System.out.println("###########Remoção##########");
+		
+		fila.removerElemento();
+		fila.removerElemento();
+		
+		fila.listarFila();
+		
+		System.out.println("___________Depois___________");
+		System.out.println("###########Fila############");
+		
+		System.out.printf("Quantidade de Elementos: %d\n", fila.getQtdElementos());
+		System.out.printf("Está vazia: %b\n",fila.estaVazio());
+		System.out.printf("Está cheio: %b\n", fila.estaCheio());
+		System.out.printf("Tamanho: %d\n", fila.getTamanho());
+				
+		System.out.println("-----------Lista-----------");
+		
+		fila.listarFila();
 		
 	}
 	
